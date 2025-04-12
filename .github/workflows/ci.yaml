@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions: write-all
+env:
+  TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Test PyPI token
+        if: env.TOKEN == ''
+        run: echo "::error::TEST_PYPI_TOKEN secret is missing" && exit 1
+
+      - uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5.4.0
+
+      - name: Install dependencies
+        run: pipx install poetry==1.8.4 && poetry install
+
+      - name: Update version (pull requests only)
+        if: github.ref != 'refs/heads/main'
+        run: poetry version "$(poetry version -s).dev$(date +%s)"
+
+      - name: Build and test
+        run: poetry build && poetry run python -m unittest
+
+      - name: Publish release to test PyPI
+        run: |
+          poetry config repositories.test-pypi https://test.pypi.org/legacy/
+          poetry config pypi-token.test-pypi ${{ secrets.TEST_PYPI_TOKEN }}
+          poetry publish -r test-pypi
