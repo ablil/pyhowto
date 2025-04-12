@@ -9,7 +9,8 @@ how to {}
 
 
 Give concise and short solution/answer, to the point.
-If the answer is technical, just give the technical solution
+If the answer is technical, just give the technical solution.
+Keep in mind the answer will be displayed on Terminal.
 """
 
 
