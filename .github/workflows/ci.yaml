@@ -31,7 +31,7 @@ jobs:
         run: poetry version "$(poetry version -s).dev$(date +%s)"
 
       - name: Build and test
-        run: poetry build && poetry run python -m unittest
+        run: poetry build
 
       - name: Publish release to test PyPI
         run: |

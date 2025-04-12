@@ -2,60 +2,37 @@
 
 [![CI](https://github.com/ablil/pyhowto/actions/workflows/ci.yaml/badge.svg?event=push)](https://github.com/ablil/pyhowto/actions/workflows/ci.yaml)
 
-This is a ready to use starter for Python packages, clone it and make sure to update:
+Simply [howdoi](https://github.com/gleitz/howdoi) but **AI Powered**.
 
-* pyproject.toml
-* README.md
+A minimalist command-line tool that fetches concise technical solutions from AI providers (OpenAI, Gemini, DeepSeek).
+Like howdoi, but with modern AI capabilities.
 
-## Develop locally
+## Installation
 
-Start a new virtual env
 ```shell
-poetry shell
+pip instal pyhowdoi
 ```
 
-Install all dependencies (declared on pyproject.toml) from all groups
+## Usage
+
+**Basic**
+
 ```shell
-poetry install
-
-# only main group
-poetry install --only main
-
-# without test group
-poetry install --without test
+howto get current timestamp in bash
+# output: `date +%s` (seconds since epoch) or `date +"%Y-%m-%d %H:%M:%S"` (human-readable)
 ```
 
-Add new dependency
+**Switch AI provider**
+
 ```shell
-# add dep to main group
-poetry add requests
-
-# add dep to dev group
-poetry add black --group dev
-
-# add dep to test group
-poetry add pytest --group test
+howto --provider deepseek get current timestamp in bash
+`date +%s` (seconds since epoch) or `date +"%Y-%m-%d %H:%M:%S"` (human-readable)
 ```
 
-## Build and publish
+Supported AI providers:
 
-Build package
-```shell
-poetry build
-```
-
-Publish package
-```shell
-poetry publish
-```
-
-Authenticate to PyPI
-```shell
-poetry config pypi-token.pypi $PYPI_TOKEN
-```
-
-
-# Referencs
-
-[Guide to Python module](https://docs.python.org/3/tutorial/modules.htmldir)
-[Python packaging user guide](https://packaging.python.org/en/latest/)
+| AI provider      | Required env key | Model            |
+|------------------|------------------|------------------|
+| gemini (default) | GEMINI_API_KEY   | gemini-1.5-flash |
+| deepseek         | DEEPSEEK_API_KEY | deepseek-chat    |
+| openai           | OPENAI_API_KEY   | gpt-4o           |
