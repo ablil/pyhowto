@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "python-package-starter"
-version = "2.0.2"
-description = "python-package-starter"
+name = "pyhowto"
+version = "0.0.1"
+description = "pyhowto"
 authors = ["ablil"]
 readme = "README.md"
 
 [project.urls]
-Repository = "https://github.com/ablil/python-package-starter"
-"Bug Tracker" = "https://github.com/ablil/python-package-starter/issues"
+Repository = "https://github.com/ablil/pyhowto"
+"Bug Tracker" = "https://github.com/ablil/pyhowto/issues"
 
 [tool.poetry.dependencies]
 python = "^3.12"
