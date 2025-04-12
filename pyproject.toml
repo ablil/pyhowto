@@ -1,12 +1,17 @@
 [tool.poetry]
 name = "pyhowto"
 version = "0.0.1"
-description = "pyhowto"
-authors = ["ablil"]
+authors = [ "ablil <ablil@proton.me>" ]
+maintainers = [ "ablil <ablil@proton.me>" ]
+description = "Ask AI how to do something"
 readme = "README.md"
+repository = "https://github.com/ablil/pyhowto"
 
-[project.urls]
-Repository = "https://github.com/ablil/pyhowto"
+[project]
+license = "LICENSE"
+keywords = ["howto", "help", "console", "command", "line", "answer", "AI"]
+
+[tool.poetry.urls]
 "Bug Tracker" = "https://github.com/ablil/pyhowto/issues"
 
 [tool.poetry.dependencies]
