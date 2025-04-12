@@ -12,6 +12,8 @@ Repository = "https://github.com/ablil/pyhowto"
 [tool.poetry.dependencies]
 python = "^3.12"
 requests = "^2.32.3"
+openai = "^1.73.0"
+google-generativeai = "^0.8.4"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -29,3 +31,7 @@ build-backend = "poetry.core.masonry.api"
 # see https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file
 [tool.black]
 line-length = 120
+
+
+[tool.poetry.scripts]
+howto = "pyhowto.__main__:main"
