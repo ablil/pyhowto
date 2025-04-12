@@ -7,7 +7,7 @@ from . import providers
 def main():
     parser = argparse.ArgumentParser(
         prog='howto',
-        description='Ask AI who to do something',
+        description='Ask AI how to do something',
         epilog='still in beta/development',
         add_help=False
     )
