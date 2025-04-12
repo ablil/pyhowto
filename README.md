@@ -1,11 +1,14 @@
 # pyhowto
 
-[![CI](https://github.com/ablil/pyhowto/actions/workflows/ci.yaml/badge.svg?event=push)](https://github.com/ablil/pyhowto/actions/workflows/ci.yaml)
 
-Simply [howdoi](https://github.com/gleitz/howdoi) but **AI Powered**.
-
+<h1 align="center">howto</h1>
+<h2 align="center">Another <a href="https://github.com/gleitz/howdoi">howdoi</a> but <strong>AI Powered</strong></h2>
+<p align="center"><strong>
 A minimalist command-line tool that fetches concise technical solutions from AI providers (OpenAI, Gemini, DeepSeek).
-Like howdoi, but with modern AI capabilities.
+with AI capabilities.
+</strong></p>
+
+[![CI](https://github.com/ablil/pyhowto/actions/workflows/ci.yaml/badge.svg?event=push)](https://github.com/ablil/pyhowto/actions/workflows/ci.yaml)
 
 ## Installation
 
@@ -18,15 +21,15 @@ pip instal pyhowdoi
 **Basic**
 
 ```shell
-howto get current timestamp in bash
-# output: `date +%s` (seconds since epoch) or `date +"%Y-%m-%d %H:%M:%S"` (human-readable)
+$ howto get current timestamp in bash
+> `date +%s` (seconds since epoch) or `date +"%Y-%m-%d %H:%M:%S"` (human-readable)
 ```
 
 **Switch AI provider**
 
 ```shell
-howto --provider deepseek get current timestamp in bash
-`date +%s` (seconds since epoch) or `date +"%Y-%m-%d %H:%M:%S"` (human-readable)
+$ howto --provider deepseek get current timestamp in bash
+> `date +%s` (seconds since epoch) or `date +"%Y-%m-%d %H:%M:%S"` (human-readable)
 ```
 
 Supported AI providers:
